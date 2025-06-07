@@ -1,0 +1,115 @@
+.whole_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap:1rem;
+}
+
+.container {
+  background-color: white;
+  border: 1px solid #DBDBDB;
+  padding: 2rem 2.5rem;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  margin-bottom: 8px;
+  padding: 9px 0 7px 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+.log_in {
+  background-color: #0095f6;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+.forgotPassword {
+  color: #00376b;
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 14px;
+  /* height: 30px; */
+}
+
+.errorWrapper{
+    height: 16px;
+}
+
+/* sign up */
+
+.signupBox {
+  margin-top: 20px;
+  padding: 20px 40px;
+  border: 1px solid #DBDBDB;
+  background-color: #fff;
+  text-align: center;
+  font-size: 14px;
+  color: #262626;
+  /* border-radius: 8px; */
+}
+
+.signupLink {
+  color: #0095f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+
+.terms{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.tagline{
+    margin-bottom: 32px;
+}
+
+.signupButton{
+    background-color: #0095F6;
+    border: none;
+    border-radius: 8px;
+    height: 32px;
+    color: #FFFFFF;
+}

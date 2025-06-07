@@ -1,0 +1,138 @@
+.whole_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap:1rem;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 380px;
+  height: 580px;
+  background-image: url(/src/assets/phone1.png);
+  background-size: cover;
+  /* height: 580px; */
+  /* margin-right: 40px; */
+}
+
+.imageBase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.imageOverlay {
+  position: relative;
+  top: 20px; /* точно подогнано по экрану */
+  left: 140px; /* чуть правее центра */
+  width: 230px; /* 204 = ~81.6% от 250 */
+  height: auto;
+  z-index: 2;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.container {
+  background-color: white;
+  border: 1px solid #DBDBDB;
+  padding: 2rem 2.5rem;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  margin-bottom: 8px;
+  padding: 9px 0 7px 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+.log_in {
+  background-color: #0095f6;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.separator hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #dbdbdb;
+}
+
+.separator_or {
+  margin: 0 10px;
+  color: #8e8e8e;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.forgotPassword {
+  color: #00376b;
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* sign up */
+
+.signupBox {
+  margin-top: 20px;
+  padding: 20px 40px;
+  border: 1px solid #DBDBDB;
+  background-color: #fff;
+  text-align: center;
+  font-size: 14px;
+  color: #262626;
+  /* border-radius: 8px; */
+}
+
+.signupLink {
+  color: #0095f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
