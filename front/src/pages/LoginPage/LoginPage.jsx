@@ -1,45 +1,49 @@
-import React, { useState } from "react";
-import styles from "./LoginPage.module.css";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+import { loginApi } from "/src/shared/api/authApi";
+
+import { defaultValues, fields, registerSchema } from "./fields";
+
 import ichgramLogo from "../../assets/ichgram.png";
 import phone1 from "../../assets/phone1.png";
 import phone2 from "../../assets/phone2.png";
 
+import styles from "./LoginPage.module.css";
+
 function LoginForm() {
-  const [usernameOrEmail, setUsernameOrEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setError("");
-    try {
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ usernameOrEmail, password }),
-      });
 
-      const data = await response.json();
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-      if (response.ok) {
-        console.log("Login successful:", data);
-      } else {
-        setError(data.message || "Login failed");
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      setError("Failed to connect to the server.");
-    }
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues,
+    mode: "onSubmit",
+    resolver: yupResolver(registerSchema),
+  });
+
+  const onSubmit = async (values) => {
+    const { data, error } = await loginApi(values);
+    if (error) return setError(error);
+    reset();
+    const TOKEN_KEY = "authToken";
+    const token = data.token;
+    localStorage.setItem(TOKEN_KEY, token);
+    navigate("/");
   };
 
   return (
     <div className={styles.whole_container}>
       <div className={styles.wrapper}>
         <div className={styles.imageWrapper}>
-          {/* <img src={phone1} alt="Phone 1" className={styles.imageBase} /> */}
           <img src={phone2} alt="Phone 2" className={styles.imageOverlay} />
         </div>
 
@@ -53,19 +57,13 @@ function LoginForm() {
               height={106.87}
             />
 
-            <form onSubmit={handleSubmit} className={styles.form}>
-              {error && <p className={styles.error}>{error}</p>}
+            <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+              {/* {error && <p className={styles.error}>{error}</p>} */}
               <input
-                type="text"
-                placeholder="Username or email"
-                value={usernameOrEmail}
-                onChange={(e) => setUsernameOrEmail(e.target.value)}
+                {...register(fields.usernameOrEmail.name)} {...fields.usernameOrEmail}
               />
               <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                {...register(fields.password.name)} {...fields.password}
               />
               <button type="submit" className={styles.log_in}>
                 Log In

@@ -4,7 +4,7 @@ const { body, validationResult } = require('express-validator');
 const auth = require('../middleware/auth');
 const userController = require('../controllers/User');
 const signup = require('../middleware/signup');
-
+const login = require('../middleware/login');
 
 // Middleware для валидации
 const validateRegistration = [
@@ -30,7 +30,7 @@ const validateLogin = [
 
 // Public
 router.post('/register', validateRegistration, signup);
-router.post('/login', validateLogin, userController.loginUser);
+router.post('/login', validateLogin, login);
 router.post('/forgot-password', userController.forgotPassword);
 
 // Private

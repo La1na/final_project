@@ -10,3 +10,11 @@ export const registerApi = async (payload) => {
     return { data: null, error: error };
   }
 };
+export const loginApi = async (payload) => {
+  try {
+    const { data } = await instance.post("/login", payload);
+    return { data, error: null };
+  } catch (error) {
+    return { data: null, error: error };
+  }
+};
