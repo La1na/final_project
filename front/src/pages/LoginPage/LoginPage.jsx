@@ -37,7 +37,7 @@ function LoginForm() {
     const TOKEN_KEY = "authToken";
     const token = data.token;
     localStorage.setItem(TOKEN_KEY, token);
-    navigate("/");
+    navigate("/homepage");
   };
 
   return (

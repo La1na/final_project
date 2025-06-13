@@ -1,0 +1,57 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Notifications from "../Notifications/Notifications";
+import Search from "../Search/Search";
+import styles from "./Header.module.css";
+import IchgramLogo from "/src/assets/ichgram.png";
+import home from "/src/assets/navbarLogos/home.png";
+import search from "/src/assets/navbarLogos/search.png";
+import explore from "/src/assets/navbarLogos/explore.png";
+import messages from "/src/assets/navbarLogos/messages.png";
+import notifications from "/src/assets/navbarLogos/notifications.png";
+import create from "/src/assets/navbarLogos/create.png";
+import profile from "/src/assets/navbarLogos/profile.png";
+function Header() {
+  const [showSearch, setShowSearch] = useState(false);
+  return (
+     <>
+    <div className={styles.container}>
+      <img src={IchgramLogo} alt="" className={styles.logo} />
+      <div className={styles.navbar}>
+        <NavLink className={styles.item} to="/homepage">
+          <img className={styles.itemImg} src={home} alt="no image" />
+          <p className={styles.itemText}>Home</p>
+        </NavLink>
+        <NavLink className={styles.item}  onClick={() => setShowSearch(true)}>
+          <img className={styles.itemImg} src={search} alt="no image" />
+          <p className={styles.itemText}>Search</p>
+        </NavLink>
+        <NavLink className={styles.item} to="/">
+          <img className={styles.itemImg} src={explore} alt="no image" />
+          <p className={styles.itemText}>Explore</p>
+        </NavLink>
+        <NavLink className={styles.item} to="/">
+          <img className={styles.itemImg} src={messages} alt="no image" />
+          <p className={styles.itemText}>Messages</p>
+        </NavLink>
+        <NavLink className={styles.item} onClick={() => setShowSearch(true)}>
+          <img className={styles.itemImg} src={notifications} alt="no image" />
+          <p className={styles.itemText}>Notifications</p>
+        </NavLink>
+        <NavLink className={styles.item} to="/">
+          <img className={styles.itemImg} src={create} alt="no image" />
+          <p className={styles.itemText}>Create</p>
+        </NavLink>
+        <NavLink className={`${styles.item} ${styles.profile}`} to="/">
+          <img className={styles.itemImg} src={profile} alt="no image" />
+          <p className={styles.itemText}>Profile</p>
+        </NavLink>
+      </div>
+    </div>
+
+    {showSearch && <Search onClose={() => setShowSearch(false)} />}
+      {showSearch && <Notifications onClose={() => setShowSearch(false)} />}
+    </>
+  );
+}
+export default Header;

@@ -1,0 +1,131 @@
+.container{
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.post{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.postImg{
+    /* width: 100%; */
+    width: 403px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    height: 505px;
+}
+
+
+.post_card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: white;
+  /* position: relative; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+.post_header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* height: 10%; */
+}
+
+.postcardImg_container {
+  /* height: 70%; */
+}
+
+.post_content {
+  /* height: 20%; */
+  /* position: relative;
+  bottom: 0; */
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.user_info {
+  flex-grow: 1;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.dot {
+  font-size: 18px;
+  color: #999;
+}
+
+.time {
+  font-size: 12px;
+  color: #999;
+}
+
+.follow_btn {
+  background: none;
+  border: none;
+  color: #0095f6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.post_image {
+  width: 100%;
+  display: block;
+}
+
+.post_content {
+  padding: 10px;
+}
+
+.likes {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000000;
+  font-size: 14.06px;
+}
+
+.caption {
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.comment {
+  margin-bottom: 5px;
+}
+
+.view_all {
+  color: #8e8e8e;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.likeAndComment_img{
+    margin-bottom: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.likeImg{
+    cursor: pointer;
+}
+
+.commentsImg{
+    cursor: pointer;
+}

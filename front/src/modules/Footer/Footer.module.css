@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+.top_part{
+    display: flex;
+    justify-content: space-evenly;   
+}
+
+.bottom_part{
+    display: flex;
+    justify-content: center;
+    margin-top: 83px;
+}

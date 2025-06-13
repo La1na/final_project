@@ -1,0 +1,43 @@
+.container {
+  width: 240px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+  margin-block: 2rem;
+  width: 6rem;
+  height: 3.5rem;
+}
+
+.navbar {
+  width: 100%;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+}
+
+.itemText {
+  color: #000;
+}
+.item:global(.active) {
+  font-weight: 700;
+}
+
+.profile {
+  margin-top: 2rem;
+}

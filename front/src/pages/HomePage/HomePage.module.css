@@ -1,0 +1,165 @@
+.whole_container {
+  display: grid;
+
+  grid-template-columns: 240px 2fr;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+.whole_container > :first-child {
+  border-right: 1px solid #dbdbdb;
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.main_content_area {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.feed_title {
+  font-weight: 600;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  color: #262626;
+}
+
+.error_message {
+  color: red;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.posts_container {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.all_updates_message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+.checkmark_circle img {
+  width: 82.69px;
+  height: 82.69px;
+}
+
+.top_message {
+  size: 16.69px;
+  color: #000000;
+}
+.bottom_message {
+  size: 12px;
+}
+
+.post_card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: white;
+  /* position: relative; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+.post_header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* height: 10%; */
+}
+
+.postcardImg_container {
+  /* height: 70%; */
+}
+
+.post_content {
+  /* height: 20%; */
+  /* position: relative;
+  bottom: 0; */
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.user_info {
+  flex-grow: 1;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.dot {
+  font-size: 18px;
+  color: #999;
+}
+
+.time {
+  font-size: 12px;
+  color: #999;
+}
+
+.follow_btn {
+  background: none;
+  border: none;
+  color: #0095f6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.post_image {
+  width: 100%;
+  display: block;
+}
+
+.post_content {
+  padding: 10px;
+}
+
+.likes {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.caption {
+  margin-bottom: 5px;
+}
+
+.comment {
+  margin-bottom: 5px;
+}
+
+.view_all {
+  color: #8e8e8e;
+  font-size: 14px;
+  cursor: pointer;
+}

@@ -29,6 +29,10 @@ app.get('/api/test', (req, res) => {
 app.use('/api/auth', require('./src/routes/auth'));
 app.use('/api/images', require('./src/routes/images'));
 
+//posts
+app.use('/api/posts', require('./src/routes/postRoutes'));
+app.use('/api/users', require('./src/routes/userRoutes'));
+
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
