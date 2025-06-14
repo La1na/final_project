@@ -19,6 +19,14 @@ import styles from "./Notifications.module.css";
 //   .catch((error) => {
 //     console.error("Ошибка:", error.response?.data || error.message);
 //   });
+// const formatDate = (dateString) => {
+//   const date = new Date(dateString);
+//   const now = new Date();
+//   const seconds = Math.floor((now - date) / 1000);
+
+// ;
+//   return `${date.getDate()}} `;
+// };
 function Notifications({ onClose }) {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -47,7 +55,18 @@ function Notifications({ onClose }) {
   }, []);
 
   const elements = notifications.map((item, idx) => {
-    return <li key={idx}>{item}</li>;
+    // console.log(item.user?.username);
+    return (
+      <li key={idx}>
+        <img className={styles.userImg} src={item.user?.avatar} alt="" />
+        <div className={styles.notificationContent}>
+          <span className={styles.Username}> {item.user?.username}</span>
+          <span className={styles.message}> {item.text}</span>
+          <span className={styles.date}> {new Date(item.date).getDate()} d</span>
+        </div>
+        <img className={styles.postImg} src={item.post?.imageURL} alt="" />
+      </li>
+    );
   });
 
   return (

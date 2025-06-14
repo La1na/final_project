@@ -54,17 +54,20 @@ const searchUsers = async (req, res) => {
 
 const notification = async (req, res) => {
   const token = req.header("Authorization")?.split(" ")[1];
+  console.log("token: ", token);
   if (!token)
     return res.status(401).json({ msg: "No token, authorization denied" });
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    console.log("decoded: ", decoded);
     const userId = decoded.userId;
+    console.log("userId: ", userId);
     const user = await User.findOne({
       _id: userId,
     });
 
-    console.log("user:     ", user);
+    console.log("user: ", user);
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });

@@ -40,3 +40,49 @@
   color: #1f2937;
   margin-bottom: 1rem;
 }
+
+.userImg{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.postImg{
+   width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  
+}
+
+.Username{
+  color: black;
+  font-weight: 600;
+  margin-right: 4px;
+}
+.date{
+  font-size: 12px;
+  
+}
+
+li{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  gap: 12px;
+  height: 50px;
+}
+
+.notificationContent{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.message{
+  margin: 0;
+  font-size: 14px;
+  color: #222;
+  line-height: 1.4;
+}

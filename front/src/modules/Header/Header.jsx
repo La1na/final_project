@@ -11,47 +11,61 @@ import messages from "/src/assets/navbarLogos/messages.png";
 import notifications from "/src/assets/navbarLogos/notifications.png";
 import create from "/src/assets/navbarLogos/create.png";
 import profile from "/src/assets/navbarLogos/profile.png";
+
 function Header() {
   const [showSearch, setShowSearch] = useState(false);
-  return (
-     <>
-    <div className={styles.container}>
-      <img src={IchgramLogo} alt="" className={styles.logo} />
-      <div className={styles.navbar}>
-        <NavLink className={styles.item} to="/homepage">
-          <img className={styles.itemImg} src={home} alt="no image" />
-          <p className={styles.itemText}>Home</p>
-        </NavLink>
-        <NavLink className={styles.item}  onClick={() => setShowSearch(true)}>
-          <img className={styles.itemImg} src={search} alt="no image" />
-          <p className={styles.itemText}>Search</p>
-        </NavLink>
-        <NavLink className={styles.item} to="/">
-          <img className={styles.itemImg} src={explore} alt="no image" />
-          <p className={styles.itemText}>Explore</p>
-        </NavLink>
-        <NavLink className={styles.item} to="/">
-          <img className={styles.itemImg} src={messages} alt="no image" />
-          <p className={styles.itemText}>Messages</p>
-        </NavLink>
-        <NavLink className={styles.item} onClick={() => setShowSearch(true)}>
-          <img className={styles.itemImg} src={notifications} alt="no image" />
-          <p className={styles.itemText}>Notifications</p>
-        </NavLink>
-        <NavLink className={styles.item} to="/">
-          <img className={styles.itemImg} src={create} alt="no image" />
-          <p className={styles.itemText}>Create</p>
-        </NavLink>
-        <NavLink className={`${styles.item} ${styles.profile}`} to="/">
-          <img className={styles.itemImg} src={profile} alt="no image" />
-          <p className={styles.itemText}>Profile</p>
-        </NavLink>
-      </div>
-    </div>
+  const [showNotifications, setShowNotifications] = useState(false);
 
-    {showSearch && <Search onClose={() => setShowSearch(false)} />}
-      {showSearch && <Notifications onClose={() => setShowSearch(false)} />}
+  const handleSearchClick = () => {
+    setShowSearch(true);
+    setShowNotifications(false); 
+  };
+
+  const handleNotificationsClick = () => {
+    setShowNotifications(true);
+    setShowSearch(false); 
+  };
+
+  return (
+    <>
+      <div className={styles.container}>
+        <img src={IchgramLogo} alt="" className={styles.logo} />
+        <div className={styles.navbar}>
+          <NavLink className={styles.item} to="/homepage">
+            <img className={styles.itemImg} src={home} alt="no image" />
+            <p className={styles.itemText}>Home</p>
+          </NavLink>
+          <div className={styles.item} onClick={handleSearchClick}>
+            <img className={styles.itemImg} src={search} alt="no image" />
+            <p className={styles.itemText}>Search</p>
+          </div>
+          <NavLink className={styles.item} to="/">
+            <img className={styles.itemImg} src={explore} alt="no image" />
+            <p className={styles.itemText}>Explore</p>
+          </NavLink>
+          <NavLink className={styles.item} to="/">
+            <img className={styles.itemImg} src={messages} alt="no image" />
+            <p className={styles.itemText}>Messages</p>
+          </NavLink>
+          <div className={styles.item} onClick={handleNotificationsClick}>
+            <img className={styles.itemImg} src={notifications} alt="no image" />
+            <p className={styles.itemText}>Notifications</p>
+          </div>
+          <NavLink className={styles.item} to="/">
+            <img className={styles.itemImg} src={create} alt="no image" />
+            <p className={styles.itemText}>Create</p>
+          </NavLink>
+          <NavLink className={`${styles.item} ${styles.profile}`} to="/">
+            <img className={styles.itemImg} src={profile} alt="no image" />
+            <p className={styles.itemText}>Profile</p>
+          </NavLink>
+        </div>
+      </div>
+
+      {showSearch && <Search onClose={() => setShowSearch(false)} />}
+      {showNotifications && <Notifications onClose={() => setShowNotifications(false)} />}
     </>
   );
 }
+
 export default Header;
