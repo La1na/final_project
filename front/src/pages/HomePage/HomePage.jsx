@@ -40,58 +40,7 @@ const HomePage = () => {
 
           <div className={styles.posts_container}>
             {posts.map((post) => (
-              // <div key={post._id} className={styles.post_card}>
-              //   <div className={styles.post_header}>
-              //     <img
-              //       src={post.user.avatar}
-              //       alt="avatar"
-              //       className={styles.avatar}
-              //     />
-              //     <div className={styles.user_info}>
-              //       <span className={styles.username}>
-              //         {post.user.username}
-              //       </span>
-              //       <span className={styles.dot}>•</span>
-              //       <span className={styles.time}>
-              //         {getTimeAgo(post.createdAt)}
-              //       </span>
-              //     </div>
-              //     <button className={styles.follow_btn}>follow</button>
-              //   </div>
-
-              //   <div className={styles.postcardImg_container}>
-              //     <img
-              //       src={post.imageUrl}
-              //       alt="post"
-              //       className={styles.post_image}
-              //     />
-              //   </div>
-
-              //   <div className={styles.post_content}>
-              //     <p className={styles.likes}>{post.likes} likes</p>
-              //     <p className={styles.caption}>
-              //       <strong>{post.user.username}</strong>{" "}
-              //       <em>{post.caption}</em>
-              //     </p>
-
-              //     {post.comments && post.comments.length > 0 && (
-              //       <>
-              //         <p className={styles.comment}>
-              //           <strong>
-              //             {post.comments[0].username || post.user.username}
-              //           </strong>{" "}
-              //           {post.comments[0].text}
-              //         </p>
-
-              //         {post.comments.length > 1 && (
-              //           <p className={styles.view_all}>
-              //             View all comments ({post.comments.length})
-              //           </p>
-              //         )}
-              //       </>
-              //     )}
-              //   </div>
-              // </div>
+             
               <PostCard key={post._id} post={post} />
             ))}
           </div>

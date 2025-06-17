@@ -1,0 +1,279 @@
+.wrapper {
+  background: #fafafa;
+  min-height: 100vh;
+}
+
+.profileContainer {
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.profileTop {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+.username {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.bio {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.link {
+  color: #00376b;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.postImage {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+  aspect-ratio: 1 / 1;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 90%;
+  max-width: 935px;
+  height: 90vh;
+  z-index: 11;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+}
+
+.modalContent {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.modalImage {
+  width: 60%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px 0 0 5px;
+  background-color: black;
+}
+
+.modalRightColumn {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #dbdbdb;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.modalAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.modalUsername {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.modalDescriptionWrapper {
+  padding: 16px;
+  border-bottom: 1px solid #dbdbdb;
+  overflow-y: auto;
+}
+
+.modalDescription {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.commentsSection {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.noComments {
+  color: #8e8e8e;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.commentAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.commentTextContent {
+  flex-grow: 1;
+}
+
+.commentText {
+  font-size: 14px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.commentUsername {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.commentMeta {
+  display: flex;
+  font-size: 12px;
+  color: #8e8e8e;
+  gap: 10px;
+}
+
+.commentLikes {
+  font-weight: 600;
+}
+
+.replyButton {
+  background: none;
+  border: none;
+  color: #8e8e8e;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: 12px;
+}
+
+.commentActions {
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.likeIcon {
+  cursor: pointer;
+  font-size: 16px;
+  color: #262626;
+}
+
+.modalActions {
+  padding: 16px;
+  border-top: 1px solid #dbdbdb;
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.postIcons {
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.likesCount {
+  font-weight: 600;
+  font-size: 14px;
+  color: #262626;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.postTime {
+  text-transform: uppercase;
+}
+
+.commentForm {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.commentForm input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+.postCommentButton {
+  padding: 8px 12px;
+  background: none;
+  color: #0095f6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.postCommentButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

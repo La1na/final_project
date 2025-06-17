@@ -60,7 +60,7 @@ function Notifications({ onClose }) {
       <li key={idx}>
         <img className={styles.userImg} src={item.user?.avatar} alt="" />
         <div className={styles.notificationContent}>
-          <span className={styles.Username}> {item.user?.username}</span>
+          <span className={styles.username}> {item.user?.username}</span>
           <span className={styles.message}> {item.text}</span>
           <span className={styles.date}> {new Date(item.date).getDate()} d</span>
         </div>

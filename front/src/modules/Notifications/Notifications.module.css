@@ -54,20 +54,12 @@
   
 }
 
-.Username{
-  color: black;
-  font-weight: 600;
-  margin-right: 4px;
-}
-.date{
-  font-size: 12px;
-  
-}
+
 
 li{
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 10px 0;
   margin-bottom: 10px;
   gap: 12px;
@@ -75,14 +67,25 @@ li{
 }
 
 .notificationContent{
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  /* flex: 1; */
+  /* display: flex;
+  justify-content: center; */
 }
 
+.username{
+  color: black;
+  font-weight: 600;
+  margin-right: 4px;
+}
 .message{
   margin: 0;
   font-size: 14px;
   color: #222;
   line-height: 1.4;
+}
+
+
+.date{
+  font-size: 14px;
+  color: #737373;
 }

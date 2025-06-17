@@ -39,7 +39,7 @@ function Header() {
             <img className={styles.itemImg} src={search} alt="no image" />
             <p className={styles.itemText}>Search</p>
           </div>
-          <NavLink className={styles.item} to="/">
+          <NavLink className={styles.item} to="/explore">
             <img className={styles.itemImg} src={explore} alt="no image" />
             <p className={styles.itemText}>Explore</p>
           </NavLink>
@@ -55,7 +55,7 @@ function Header() {
             <img className={styles.itemImg} src={create} alt="no image" />
             <p className={styles.itemText}>Create</p>
           </NavLink>
-          <NavLink className={`${styles.item} ${styles.profile}`} to="/">
+          <NavLink className={`${styles.item} ${styles.profile}`} to="/myprofile">
             <img className={styles.itemImg} src={profile} alt="no image" />
             <p className={styles.itemText}>Profile</p>
           </NavLink>
