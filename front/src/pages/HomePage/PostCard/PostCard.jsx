@@ -36,13 +36,13 @@ const PostCard = ({ post }) => {
     <div key={post._id} className={styles.post_card}>
       <div className={styles.post_header}>
         <img
-          src={post.user?.avatar || "default-avatar.png"}
+          src={post.username?.avatar || "default-avatar.png"}
           alt="avatar"
           className={styles.avatar}
         />
         <div className={styles.user_info}>
           <span className={styles.username}>
-            {post.user?.username ?? "Unknown"}
+            {post.username?.username ?? "Unknown"}
           </span>
           <span className={styles.dot}>•</span>
           <span className={styles.time}>{getTimeAgo(post.createdAt)}</span>
@@ -72,7 +72,7 @@ const PostCard = ({ post }) => {
           <>
             <p className={styles.comment}>
               <strong>
-                {(post.comments[0].username || post.user?.username) ??
+                {(post.comments[0].username || post.username?.username) ??
                   "Unknown"}
               </strong>{" "}
               {post.comments[0].text}
