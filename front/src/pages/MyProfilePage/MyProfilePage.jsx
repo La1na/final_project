@@ -3,6 +3,7 @@ import Header from "../../modules/Header/Header";
 import Footer from "../../modules/Footer/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import avatar from "/src/assets/ICHavatar.png";
 import likes from "/src/assets/navbarLogos/notifications.png";
 import commentIcon from "/src/assets/navbarLogos/comment.png";
@@ -59,6 +60,12 @@ function MyProfilePage() {
     }
   };
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/editprofile');
+  };
+
   return (
     <div className={styles.wrapper}>
       <Header />
@@ -67,7 +74,11 @@ function MyProfilePage() {
         <div className={styles.profileTop}>
           <img className={styles.avatar} src={avatar} alt="avatar" />
           <div className={styles.profileInfo}>
+            <div className={styles.profile_name}>
             <h2 className={styles.username}>itcareerhub</h2>
+            <button className={styles.editProfileButton} onClick={handleClick}>Edit profile</button>
+
+            </div>
             <div className={styles.stats}>
               <span>
                 <b>{posts.length}</b> posts

@@ -19,7 +19,8 @@
   width: 100%;
 }
 
-.exploreGrid,
+
+/* .exploreGrid,
 div:nth-child(5n + 3) {
   grid-row: auto / span 2;
 }
@@ -29,6 +30,16 @@ div:nth-child(5n + 6) {
 }
 .exploreGrid,
 div:nth-child(5n + 8) {
+  grid-row: auto / span 1;
+} */
+
+.exploreContent  div:nth-child(5n + 3) {
+  grid-row: auto / span 2;
+}
+.exploreContent  div:nth-child(5n + 6) {
+  grid-row: auto / span 2;
+}
+.exploreContent  div:nth-child(5n + 8) {
   grid-row: auto / span 1;
 }
 

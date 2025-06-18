@@ -1,0 +1,59 @@
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  gap: 40px;
+  /* padding: 40px; */
+}
+.text{
+    margin-bottom: 320px;
+}
+.text h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 380px;
+  height: 580px;
+  background-image: url(/src/assets/phone1.png);
+  background-size: cover;
+  /* height: 580px; */
+  /* margin-right: 40px; */
+}
+
+.imageBase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.imageOverlay {
+  position: relative;
+  top: 20px; /* точно подогнано по экрану */
+  left: 140px; /* чуть правее центра */
+  width: 230px; /* 204 = ~81.6% от 250 */
+  height: auto;
+  z-index: 2;
+  object-fit: contain;
+  border-radius: 20px;
+}

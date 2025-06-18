@@ -1,5 +1,4 @@
 .wrapper {
-  background: #fafafa;
   min-height: 100vh;
 }
 
@@ -7,6 +6,19 @@
   max-width: 935px;
   margin: 0 auto;
   padding: 30px 20px;
+}
+
+.profile_name{
+  display: flex;
+   gap: 30px;
+}
+
+.editProfileButton{
+  height: 32px;
+  width: 160px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
 }
 
 .profileTop {

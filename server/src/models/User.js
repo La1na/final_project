@@ -5,6 +5,8 @@ const userSchema = new mongoose.Schema({
   avatar: { type: String },
   email: { type: String },
   password: { type: String },
+  website: {type: String},
+  about: {type: String},
   notifications: [],
 });
 

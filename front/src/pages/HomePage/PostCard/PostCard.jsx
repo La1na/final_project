@@ -64,7 +64,7 @@ const PostCard = ({ post }) => {
 
         <p className={styles.likes}>{likesCount} likes</p>
         <p className={styles.caption}>
-          <strong>{post.user?.username ?? "Unknown"}</strong>{" "}
+          <strong className={styles.usernameCaption}>{post.username?.username ?? "Unknown"}</strong>{" "}
           <em>{post.caption}</em>
         </p>
 

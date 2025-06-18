@@ -104,6 +104,10 @@
   margin-bottom: 5px;
   color: #000000;
 }
+.usernameCaption{
+   font-size: 15px;
+   font-weight: 600;
+}
 
 .comment {
   margin-bottom: 5px;
