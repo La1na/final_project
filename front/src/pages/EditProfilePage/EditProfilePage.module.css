@@ -1,0 +1,97 @@
+.inner_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin-bottom: 200px;
+  margin-top: 40px;
+}
+
+.profileEdit_text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: -510px;
+  margin-bottom: 50px;
+}
+
+.profileAvatar_block {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px;
+  width: 640px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  background-color: #EFEFEF;
+}
+
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.profileAvatar_text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutInBlock{
+    margin-top: 20px;
+}
+.username {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.newPhoto_button {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit_container {
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.item h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.item input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+.save_button {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  width: 268px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: -370px;
+}
