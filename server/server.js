@@ -22,6 +22,8 @@ app.use(
 );
 
 const uploadDir = path.join(__dirname, process.env.UPLOAD_DIR || "postsImg");
+console.log("-------uploadDir: ",uploadDir);
+
 app.use("/uploads", express.static(uploadDir));
 
 app.use("/images", express.static(path.join(__dirname, "public", "images")));

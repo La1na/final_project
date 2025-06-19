@@ -19,8 +19,10 @@ function MyProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const postsRes = await axios.get("http://localhost:3000/api/my-posts");
+        const postsRes = await axios.get("http://localhost:3000/api/posts");
         setPosts(postsRes.data);
+        console.log("----------posts: ", postsRes);
+        console.log("----------posts: ", posts);
 
         const usersRes = await axios.get("http://localhost:3000/api/users");
         if (usersRes.data.length > 2) {
@@ -113,7 +115,7 @@ function MyProfilePage() {
           {posts.map((post) => (
             <img
               key={post._id}
-              src={`http://localhost:3000/postsImg/${post.image}`}
+              src={`${post.imageUrl}`}
               alt="post"
               className={styles.postImage}
               onClick={() => openPost(post)}
@@ -128,7 +130,7 @@ function MyProfilePage() {
           <div className={styles.modal}>
             <div className={styles.modalContent}>
               <img
-                src={`http://localhost:3000/postsImg/${modalPost.image}`}
+                src={`${modalPost.imageUrl}`}
                 alt="post"
                 className={styles.modalImage}
               />

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import styles from "./CreatePage.module.css";
 import avatar from "/src/assets/ICHavatar.png";
-import uploadImg from "/src/assets/fileUpload.png"
+import uploadImg from "/src/assets/fileUpload.png";
+
 function Create({ onClose }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [user, setUser] = useState(null);
@@ -24,54 +25,48 @@ function Create({ onClose }) {
   }, []);
 
   const handleFileChange = async (e) => {
-  const file = e.target.files[0];
-  setSelectedFile(file);
+    const file = e.target.files[0];
+    if (!file) return;
 
-  console.log("Выбран файл:", file);
+    setSelectedFile(file);
+  };
 
-  if (!file) return;
-
-  
-  const formData = new FormData();
-  formData.append("caption", caption);
-  formData.append("selectedFile", file);
-
-  try {
-    const response = await fetch("http://localhost:3000/api/posts", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`, 
-      },
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error(`Ошибка загрузки: ${response.statusText}`);
-    }
-
-    const result = await response.json();
-    console.log("Успешно загружено:", result);
-  } catch (error) {
-    console.error("Ошибка при отправке поста:", error);
-  }
-};
-
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (!selectedFile) {
       alert("Пожалуйста, выберите файл");
       return;
     }
 
-    console.log("Загружаемый файл:", selectedFile);
-    console.log("Описание:", caption);
-    alert(`Файл "${selectedFile.name}" готов к загрузке!`);
+    const formData = new FormData();
+    formData.append("author", user);
+    formData.append("caption", caption);
+    formData.append("selectedFile", selectedFile);
+
+    try {
+      const response = await fetch("http://localhost:3000/api/posts", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка загрузки: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      console.log("Успешно загружено:", result);
+    } catch (error) {
+      console.error("Ошибка при отправке поста:", error);
+    }
+
     onClose();
   };
-// на бек из токена достаешь юзерайди, создаешь обїект Post, заполняешь его и сохраняешь
+  // на бек из токена достаешь юзерайди, создаешь обїект Post, заполняешь его и сохраняешь
   const handleModalClick = (e) => {
     e.stopPropagation();
-    console.log(e);
-    
+    // console.log(e);
   };
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -93,7 +88,7 @@ function Create({ onClose }) {
             ) : (
               <label htmlFor="file-upload" className={styles.placeholder}>
                 <div className={styles.uploadIcon}>
-                    <img src={uploadImg} alt="" />
+                  <img src={uploadImg} alt="" />
                 </div>
                 <input
                   type="file"
