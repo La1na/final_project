@@ -3,13 +3,14 @@ import styles from "./EditProfilePage.module.css";
 import Header from "../../modules/Header/Header";
 import Footer from "../../modules/Footer/Footer";
 import avatar from "/src/assets/ICHavatar.png";
-
+import { useNavigate } from "react-router-dom";
 function Edit() {
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
   const [website, setWebsite] = useState("");
   const [about, setAbout] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -20,7 +21,7 @@ function Edit() {
         }
         const data = await response.json();
         setUsers(data);
-        if (data.length > 0) {
+        if (data.length > 2) {
           setUsername(data[2].username || "");
           setWebsite(data[2].website || "");
           setAbout(data[2].about || "");
@@ -34,21 +35,25 @@ function Edit() {
   }, []);
 
   const handleSave = async () => {
-    if (users.length === 0) return;
+    if (users.length <= 2) return;
     try {
-      const response = await fetch(`http://localhost:3000/api/users/${users[2].id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, website, about }),
-      });
+      const response = await fetch(
+        `http://localhost:3000/api/users/${users[2]._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, website, about }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to update profile");
       }
 
       alert("Profile updated!");
+      navigate("/myprofile")
     } catch (err) {
       console.error(err);
       alert("Error saving profile");

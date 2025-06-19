@@ -15,7 +15,6 @@ const seedPosts = async (req, res) => {
     }
 
     console.log("----------user._id", user._id);
-    
 
     const posts = await Post.insertMany([
       {
@@ -91,7 +90,7 @@ const seedPosts = async (req, res) => {
         username: user._id,
         likes: 72350,
         comments: [
-          { username:commentAuthor._id, text: "Bucket list location" },
+          { username: commentAuthor._id, text: "Bucket list location" },
           { username: commentAuthor._id, text: "Magical" },
         ],
       },
@@ -133,7 +132,7 @@ const seedPosts = async (req, res) => {
     res.status(201).json(posts);
   } catch (error) {
     console.log(error);
-    
+
     res.status(500).json({ message: "Failed to seed posts", error });
   }
 };
@@ -142,7 +141,7 @@ const getAllPosts = async (req, res) => {
   try {
     const posts = await Post.find().populate("username");
     console.log("------posts: ", posts);
-    
+
     res.json(posts);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch posts" });

@@ -21,8 +21,8 @@ app.use(
   })
 );
 
-const uploadDir = path.join(__dirname, process.env.UPLOAD_DIR || 'postsImg');
-app.use('/uploads', express.static(uploadDir));
+const uploadDir = path.join(__dirname, process.env.UPLOAD_DIR || "postsImg");
+app.use("/uploads", express.static(uploadDir));
 
 app.use("/images", express.static(path.join(__dirname, "public", "images")));
 
@@ -36,8 +36,6 @@ app.use("/api/posts", require("./src/routes/postRoutes"));
 app.use("/api/users", require("./src/routes/userRoutes"));
 
 app.use("/api/my-posts", require("./src/routes/myPostRoutes"));
-
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

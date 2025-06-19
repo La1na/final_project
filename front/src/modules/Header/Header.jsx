@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Notifications from "../Notifications/Notifications";
+import Create from "../../pages/CreatePage/CreatePage";
 import Search from "../Search/Search";
 import styles from "./Header.module.css";
 import IchgramLogo from "/src/assets/ichgram.png";
@@ -15,17 +16,25 @@ import profile from "/src/assets/navbarLogos/profile.png";
 function Header() {
   const [showSearch, setShowSearch] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [showCreate, setShowCreate] = useState(false)
 
   const handleSearchClick = () => {
     setShowSearch(true);
-    setShowNotifications(false); 
+    setShowNotifications(false);
+    setShowCreate(false);
   };
 
   const handleNotificationsClick = () => {
     setShowNotifications(true);
-    setShowSearch(false); 
+    setShowSearch(false);
+    setShowCreate(false);
   };
 
+  const handleCreateClick = () => {
+    setShowCreate(true);
+    setShowSearch(false);
+    setShowNotifications(false);
+  };
   return (
     <>
       <div className={styles.container}>
@@ -51,7 +60,7 @@ function Header() {
             <img className={styles.itemImg} src={notifications} alt="no image" />
             <p className={styles.itemText}>Notifications</p>
           </div>
-          <NavLink className={styles.item} to="/">
+          <NavLink className={styles.item} onClick={handleCreateClick}>
             <img className={styles.itemImg} src={create} alt="no image" />
             <p className={styles.itemText}>Create</p>
           </NavLink>
@@ -64,6 +73,7 @@ function Header() {
 
       {showSearch && <Search onClose={() => setShowSearch(false)} />}
       {showNotifications && <Notifications onClose={() => setShowNotifications(false)} />}
+      {showCreate && <Create onClose={() => setShowCreate(false)}/>}
     </>
   );
 }
