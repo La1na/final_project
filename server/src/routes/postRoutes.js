@@ -10,16 +10,12 @@ router.post("/seed", seedPosts);
 router.get("/", getAllPosts);
 
 router.post("/:id/like", async (req, res) => {
-  console.log("----------------in post like route");
-
   try {
     const post = await Post.findByIdAndUpdate(
       req.params.id,
       { $inc: { likes: 1 } },
       { new: true }
     );
-
-    console.log("-----------------", post);
 
     if (!post) return res.status(404).json({ message: "Пост не найден" });
 
@@ -41,7 +37,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post("/", upload.single("selectedFile"), async (req, res, next) => {
-
   const token = req.header("Authorization")?.split(" ")[1];
   console.log("token: ", token);
   if (!token)
@@ -49,7 +44,7 @@ router.post("/", upload.single("selectedFile"), async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    // console.log("decoded: ", decoded);
+
     const userId = decoded.userId;
 
     const post = new Post();
@@ -63,8 +58,6 @@ router.post("/", upload.single("selectedFile"), async (req, res, next) => {
   } catch (err) {
     res.status(400).json({ msg: "authorization denied" });
   }
-
-  // здесь создать обект новій пост и сохранить
 });
 
 module.exports = router;

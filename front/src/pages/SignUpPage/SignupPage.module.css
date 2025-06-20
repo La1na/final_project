@@ -8,12 +8,12 @@
 .wrapper {
   display: flex;
   align-items: flex-start;
-  gap:1rem;
+  gap: 1rem;
 }
 
 .container {
   background-color: white;
-  border: 1px solid #DBDBDB;
+  border: 1px solid #dbdbdb;
   padding: 2rem 2.5rem;
   width: 350px;
   display: flex;
@@ -51,7 +51,6 @@ input {
   margin-top: 10px;
 }
 
-
 .forgotPassword {
   color: #00376b;
   font-size: 12px;
@@ -63,24 +62,20 @@ input {
   color: red;
   margin-bottom: 10px;
   font-size: 14px;
-  /* height: 30px; */
 }
 
-.errorWrapper{
-    height: 16px;
+.errorWrapper {
+  height: 16px;
 }
-
-/* sign up */
 
 .signupBox {
   margin-top: 20px;
   padding: 20px 40px;
-  border: 1px solid #DBDBDB;
+  border: 1px solid #dbdbdb;
   background-color: #fff;
   text-align: center;
   font-size: 14px;
   color: #262626;
-  /* border-radius: 8px; */
 }
 
 .signupLink {
@@ -93,23 +88,23 @@ input {
   text-decoration: underline;
 }
 
-.terms{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.terms {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.tagline{
-    margin-bottom: 32px;
+.tagline {
+  margin-bottom: 32px;
 }
 
-.signupButton{
-    background-color: #0095F6;
-    border: none;
-    border-radius: 8px;
-    height: 32px;
-    color: #FFFFFF;
+.signupButton {
+  background-color: #0095f6;
+  border: none;
+  border-radius: 8px;
+  height: 32px;
+  color: #ffffff;
 }

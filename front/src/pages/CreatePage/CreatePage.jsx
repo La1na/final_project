@@ -63,10 +63,10 @@ function Create({ onClose }) {
 
     onClose();
   };
-  // на бек из токена достаешь юзерайди, создаешь обїект Post, заполняешь его и сохраняешь
+  
   const handleModalClick = (e) => {
     e.stopPropagation();
-    // console.log(e);
+    
   };
   return (
     <div className={styles.overlay} onClick={onClose}>

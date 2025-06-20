@@ -10,7 +10,7 @@ function Footer() {
         <NavLink className={styles.item} to="/">
           <p className={styles.itemText}>Search</p>
         </NavLink>
-         <NavLink className={styles.item} to="/">
+         <NavLink className={styles.item} to="/explore">
           <p className={styles.itemText}>Explore</p>
         </NavLink>
         <NavLink className={styles.item} to="/">

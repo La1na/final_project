@@ -18,10 +18,6 @@ router.post("/", upload.single("image"), (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  console.log("--------------posts: ", posts);
-//   здесь надо распарсить токен, получить айди текущего юзера
-// и найти посты у которых username=айди текущего юзера
-
   res.json(posts);
 });
 

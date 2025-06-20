@@ -1,37 +1,6 @@
-// const MyPost = require('../models/Post');
-
-// exports.getPostById = async (req, res) => {
-//   try {
-//     const post = await MyPost.findById(req.params.postId);
-//     if (!post) return res.status(404).json({ error: 'Post not found' });
-//     res.json(post);
-//   } catch (error) {
-//     res.status(500).json({ error: 'Server error' });
-//   }
-// };
-
-// exports.addComment = async (req, res) => {
-//   try {
-//     const { text } = req.body;
-//     console.log("-----------text: ", text);
-//         console.log("-----------req.params.postId: ", req.params.postId);
-//     const post = await MyPost.findById(req.params.postId);
-//     console.log("-----------post: ", post);
-//     if (!post) return res.status(404).json({ error: 'Post not found' });
-
-//     post.comments.push({ text });
-//     await post.save();
-
-//     res.status(201).json({ message: 'Comment added' });
-//   } catch (error) {
-//     res.status(500).json({ error: 'Server error' });
-//   }
-// };
-
 const Post = require("../models/Post");
 const User = require("../models/User");
 
-// Создание нового поста
 exports.createPost = async (req, res) => {
   try {
     const { imageUrl, caption } = req.body;
@@ -64,7 +33,6 @@ exports.createPost = async (req, res) => {
   }
 };
 
-// Получение всех постов (или постов текущего пользователя)
 exports.getAllPosts = async (req, res) => {
   try {
     const posts = await Post.find({ user: req.user._id })
@@ -80,7 +48,6 @@ exports.getAllPosts = async (req, res) => {
   }
 };
 
-// Получение одного поста по ID (для модального окна)
 exports.getPostById = async (req, res) => {
   try {
     const postId = req.params.id;
@@ -123,12 +90,10 @@ exports.addCommentToPost = async (req, res) => {
     const newCommentWithUser =
       savedPost.comments[savedPost.comments.length - 1];
 
-    res
-      .status(201)
-      .json({
-        message: "Comment added successfully!",
-        comment: newCommentWithUser,
-      });
+    res.status(201).json({
+      message: "Comment added successfully!",
+      comment: newCommentWithUser,
+    });
   } catch (error) {
     console.error("Error adding comment to post:", error);
     res.status(500).json({ error: "Server error" });

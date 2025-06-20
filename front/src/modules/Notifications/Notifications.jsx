@@ -1,32 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "./Notifications.module.css";
-// const token = localStorage.getItem("token");
 
-// axios
-//   .post(
-//     "http://localhost:3000/api/users",
-//     {},
-//     {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     }
-//   )
-//   .then((response) => {
-//     console.log("Успех:", response.data);
-//   })
-//   .catch((error) => {
-//     console.error("Ошибка:", error.response?.data || error.message);
-//   });
-// const formatDate = (dateString) => {
-//   const date = new Date(dateString);
-//   const now = new Date();
-//   const seconds = Math.floor((now - date) / 1000);
-
-// ;
-//   return `${date.getDate()}} `;
-// };
 function Notifications({ onClose }) {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -55,7 +30,7 @@ function Notifications({ onClose }) {
   }, []);
 
   const elements = notifications.map((item, idx) => {
-    // console.log(item.user?.username);
+  
     return (
       <li key={idx}>
         <img className={styles.userImg} src={item.user?.avatar} alt="" />

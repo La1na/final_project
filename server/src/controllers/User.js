@@ -66,7 +66,6 @@ exports.forgotPassword = async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (user) {
-      // TODO: Add real token generation + email logic
       console.log(`Password reset requested for: ${email}`);
       return res.json({
         message: "Password reset initiated (not implemented).",

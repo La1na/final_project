@@ -77,27 +77,12 @@
   border-radius: 8px;
   margin-bottom: 20px;
   background-color: white;
-  /* position: relative; */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
 }
 
 .post_header {
   display: flex;
   align-items: center;
   padding: 10px;
-  /* height: 10%; */
-}
-
-.postcardImg_container {
-  /* height: 70%; */
-}
-
-.post_content {
-  /* height: 20%; */
-  /* position: relative;
-  bottom: 0; */
 }
 
 .avatar {

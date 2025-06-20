@@ -18,7 +18,7 @@ function ForgotPasswordForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: usernameOrEmail }), // Используем email для запроса сброса
+        body: JSON.stringify({ email: usernameOrEmail }),
       });
 
       const data = await response.json();

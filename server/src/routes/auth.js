@@ -6,7 +6,7 @@ const userController = require('../controllers/User');
 const signup = require('../middleware/signup');
 const login = require('../middleware/login');
 
-// Middleware для валидации
+
 const validateRegistration = [
   body('username', 'Username is required').notEmpty(),
   body('email', 'Please include a valid email').isEmail(),
@@ -28,12 +28,12 @@ const validateLogin = [
   },
 ];
 
-// Public
+
 router.post('/register', validateRegistration, signup);
 router.post('/login', validateLogin, login);
 router.post('/forgot-password', userController.forgotPassword);
 
-// Private
+
 router.get('/', auth, userController.getUser);
 router.get('/protected', auth, userController.protectedRoute);
 

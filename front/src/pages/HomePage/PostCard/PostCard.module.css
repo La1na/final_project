@@ -1,51 +1,34 @@
-.container{
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 20px;
-    max-width: 500px;
+.container {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  max-width: 500px;
 }
 
-.post{
-    font-weight: bold;
-    margin-bottom: 8px;
+.post {
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.postImg{
-    /* width: 100%; */
-    width: 403px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    height: 505px;
+.postImg {
+  width: 403px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  height: 505px;
 }
-
 
 .post_card {
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 20px;
   background-color: white;
-  /* position: relative; */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
 }
 
 .post_header {
   display: flex;
   align-items: center;
   padding: 10px;
-  /* height: 10%; */
-}
-
-.postcardImg_container {
-  /* height: 70%; */
-}
-
-.post_content {
-  /* height: 20%; */
-  /* position: relative;
-  bottom: 0; */
 }
 
 .avatar {
@@ -104,9 +87,9 @@
   margin-bottom: 5px;
   color: #000000;
 }
-.usernameCaption{
-   font-size: 15px;
-   font-weight: 600;
+.usernameCaption {
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .comment {
@@ -120,16 +103,16 @@
   margin-top: 10px;
 }
 
-.likeAndComment_img{
-    margin-bottom: 10px;
-    display: flex;
-    gap: 20px;
+.likeAndComment_img {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 20px;
 }
 
-.likeImg{
-    cursor: pointer;
+.likeImg {
+  cursor: pointer;
 }
 
-.commentsImg{
-    cursor: pointer;
+.commentsImg {
+  cursor: pointer;
 }

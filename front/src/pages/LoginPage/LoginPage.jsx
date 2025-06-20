@@ -14,8 +14,6 @@ import phone2 from "../../assets/phone2.png";
 import styles from "./LoginPage.module.css";
 
 function LoginForm() {
-
-
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -58,13 +56,11 @@ function LoginForm() {
             />
 
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-              {/* {error && <p className={styles.error}>{error}</p>} */}
               <input
-                {...register(fields.usernameOrEmail.name)} {...fields.usernameOrEmail}
+                {...register(fields.usernameOrEmail.name)}
+                {...fields.usernameOrEmail}
               />
-              <input
-                {...register(fields.password.name)} {...fields.password}
-              />
+              <input {...register(fields.password.name)} {...fields.password} />
               <button type="submit" className={styles.log_in}>
                 Log In
               </button>
